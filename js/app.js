@@ -1,37 +1,47 @@
 console.log("running")
-
+///////////////PSEUDOCODE/NOTES//////////////////////
 // // 1.) stop negative nums DONE!!!!!
-// // 2.) 10 = dead DONE!!!
-// // 3.) levels/time ++  MEH
+// // 2.) 10 = dead DONE!!! 
+// // 3.) levels/time ++  //NEEDS WORK
 
 // /////////////GLOBAL VARIBALES/////////////////////
-
+let speed = 1000;
 let timePassing;
 let seconds = 0;
 let minutes = 0;
 let gamePlay = false;
 
+///////////////PET CLASS///////////////////////////////
 class Tomagotchi {
     constructor(name) {
       this.name = name;
-      this.hunger = 0;
+      this.hunger = 8;
       this.sleepiness = 0;
       this.boredom = 0;
       this.age = 0;
     }
   }
 
-let pet = new Tomagotchi("")
+let pet = new Tomagotchi('')
 
 //////////////FUNCTIONS//////////////////////////////
+$( "form" ).click(function(e) {
+    e.preventDefault();
+  });
 
 $('.start').click(function(){
+    if (gamePlay == false){
     gamePlay = true;
-    timePassing = setInterval(secondsGoUp, 1000);
+    timePassing = setInterval(secondsGoUp, speed);
     const $inputName = $('#inputName').val();
     console.log($inputName)
     $('#headName').text($inputName)
     pet.name = $inputName;
+}})
+
+$('.stop').click(function(){
+    clearInterval(timePassing);  //only for debugging will remove after
+    //or endGame(); to clear 
 })
 
 const ageCt = () => {
@@ -80,7 +90,6 @@ const displayTime = () => {
 }
 
 const endGame = () => {
-    alert("YOUR DEAD! Click go to try again.")
     pet.hunger = 0;
     $('.hunger').text("Hunger: " + pet.hunger)
     pet.sleepiness = 0;
@@ -91,7 +100,7 @@ const endGame = () => {
     $('.age').text("Age: " + pet.age)
     seconds = 0;
     minutes = 0;
-    $('#headName').text("PET NAME");
+    $('#headName').text("TAMAGOTCHI!");
     $('.time').text(`Time: ${minutes}Mins ${seconds}Secs`);
     clearInterval(timePassing);
     gamePlay = false;
@@ -115,24 +124,30 @@ const secondsGoUp = () => {
         minutes++;
         pet.age++;
         $('.age').text("Age: " + pet.age)
-    } if (pet.hunger === 10 || pet.sleepiness === 10 || pet.boredom === 10){
+    } if (pet.hunger === 10){
+        alert(pet.name + " died of hunger! Try again.")
+        endGame();
+    } if (pet.sleepiness === 10){
+        alert(pet.name + " died of sleepiness! Try again.")
+        endGame();
+    } if (pet.boredom === 10) {
+        console.log(pet.name)
+        alert(pet.name + ' died of boredom! Try again.')
         endGame();
     } if (pet.age >= 5){
-        console.log("plus 5 speed working")
-        timePassing-400
+        console.log("5 working")
+        speed-=400
+    } if (pet.age >= 8){
+        speed-=100
     } if (pet.age >= 10){
-        console.log("plus 10 speed wokring")
-        timePassing-400
+        console.log("10 wokring")
+        speed-=100
     } if (pet.age >= 15){
-        console.log("plus 15 speed working")
+        console.log("15 wokring")
         alert("You win! Your pet died of old age")
         endGame()
     }
 }
-
-$('.stop').click(function(){
-    clearInterval(timePassing);
-})
 
 // ///////////////MAIN//////////////////////////////////
 displayTime();

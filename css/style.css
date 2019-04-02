@@ -1,0 +1,14 @@
+.petName {
+    text-align: center;
+}
+ul {
+    text-align: center;
+}
+.stats {
+    text-align: left;
+    background-color: blue;
+    width: 300px;
+}
+body {
+    text-align: center;
+}
