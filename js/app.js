@@ -15,7 +15,7 @@ let gamePlay = false;
 class Tomagotchi {
     constructor(name) {
       this.name = name;
-      this.hunger = 8;
+      this.hunger = 0;
       this.sleepiness = 0;
       this.boredom = 0;
       this.age = 0;
@@ -28,10 +28,33 @@ let pet = new Tomagotchi('')
 $( "form" ).click(function(e) {
     e.preventDefault();
   });
+   
+// const moveMario = () => {
+    
+//     $("#mario").animate({
+//             right: "-=1000px"
+//         }, 10000, moveMarioBack())
+// }
+
+const moveMarioBack = () => {
+    $("#mario").animate({
+                left: "+=1000px"
+            }, 10000, function(){
+                moveMario()
+            })
+ }
+ const moveMario = () => {
+    
+    $("#mario").animate({
+            right: "-=1000px"
+        }, 10000, moveMarioBack())
+}
+
 
 $('.start').click(function(){
     if (gamePlay == false){
     gamePlay = true;
+    moveMario();
     timePassing = setInterval(secondsGoUp, speed);
     const $inputName = $('#inputName').val();
     console.log($inputName)
@@ -39,9 +62,10 @@ $('.start').click(function(){
     pet.name = $inputName;
 }})
 
-$('.stop').click(function(){
-    clearInterval(timePassing);  //only for debugging will remove after
-    //or endGame(); to clear 
+$('.restart').click(function(){
+    //clearInterval(timePassing);  //only for debugging will remove after
+    endGame(); 
+    moveMario()
 })
 
 const ageCt = () => {
@@ -86,7 +110,7 @@ const hungerCt = () => {
 }
 
 const displayTime = () => {
-    $('.time').text(`Time: ${minutes}Mins ${seconds}Secs`)
+    $('.time').text(`Time: ${minutes}m ${seconds}s`)
 }
 
 const endGame = () => {
@@ -100,14 +124,16 @@ const endGame = () => {
     $('.age').text("Age: " + pet.age)
     seconds = 0;
     minutes = 0;
-    $('#headName').text("TAMAGOTCHI!");
-    $('.time').text(`Time: ${minutes}Mins ${seconds}Secs`);
+    $('#headName').text("MARIO-GOTCHI!");
+    $('.time').text(`Time: ${minutes}m ${seconds}s`);
     clearInterval(timePassing);
     gamePlay = false;
+    //clear placeholder?
+    //$('#headName').attr("placeholder = jkbddbw")    ?
 }
 
 const secondsGoUp = () => {
-    $('.time').text(`Time: ${minutes}Mins ${seconds}Secs`)
+    $('.time').text(`Time: ${minutes}m ${seconds}s`)
     if (gamePlay === true){
         seconds++;
     } if(seconds % 3 === 0){
@@ -148,6 +174,7 @@ const secondsGoUp = () => {
         endGame()
     }
 }
+
 
 // ///////////////MAIN//////////////////////////////////
 displayTime();

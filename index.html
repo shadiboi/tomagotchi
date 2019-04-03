@@ -5,31 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">    
+    <title>MARIO-GOTCHI</title>
 </head>
+
 <body>
-    <div class="petName">
+        <h1 id="headName">MARIO-GOTCHI!</h1>
 <form>
-    <h1 id="headName">TAMAGOTCHI!</h1>
-    <input placeholder="Enter your pet Name" id="inputName">  
-    <button type="submit" class="start">GO!</button>
-    <button type="submit" class="stop">STOP!</button>
+    <input placeholder="Enter characters name here" id="inputName">  
 </form>
-    </div>
-<div class="stats">
-    <h1 class="time"> </h1>
-    <h1 class="seconds"> </h1>
-    <h1 class="minutes"> </h1>
-    <h3 class="age"></h3>
-    <h3 class="hunger"></h3>
-    <h3 class="sleepiness"></h3>
-    <h3 class="boredom"></h3>
+<div id="buttons">   
+    <button type="submit" class="start">GO!</button>
+    <button type="submit" class="restart">RESTART!</button>
+</div>     
+
+        <h2 class="time"> </h2>
+        <h2 class="seconds"> </h2>
+        <h2 class="minutes"> </h2>
+
+
+<div id="stats">
+        <h3 class="age"></h3>
+        <h3 class="hunger"></h3>
+        <h3 class="sleepiness"></h3>
+        <h3 class="boredom"></h3>
 </div>
-            <ul>
-                <button type="submit" id="feedBtn">FEED PET</button> 
-                <button type="submit" id="lightsBtn">TURN OFF LIGHTS</button>  
-                <button type="submit" id="playBtn">PLAY WITH PET</button> 
-            </ul>
+<img id="mario" src="https://vignette.wikia.nocookie.net/mario/images/3/34/Mario.gif/revision/latest?cb=20180115202747">
+ <div id="helpBtns">
+        <ul>
+            <button type="submit" id="feedBtn">FEED ME!</button> 
+            <button type="submit" id="lightsBtn">NAP TIME!</button>  
+            <button type="submit" id="playBtn">PLAY WITH ME!</button> 
+        </ul>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/app.js"></script>

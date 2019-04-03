@@ -1,14 +1,95 @@
-.petName {
-    text-align: center;
+#stats {
+	line-height: 26px;
+    font-size: 20px;
+    background-color:rgba(00,00,00,00, 0.5);
+    opacity: 80%;
+    margin-right: 65%;
+    font-family: 'VT323', monospace;
 }
-ul {
+h1 {
+    color: #0D2C40;
+    letter-spacing: 1px;
+    font-weight: 480;
+    font-size: 50px;
+    margin: 0; 
     text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 80px
 }
-.stats {
+#time {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+}
+/* body {
     text-align: left;
-    background-color: blue;
-    width: 300px;
+    background-image: url("https://wallpapercave.com/wp/wp2647940.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+} */
+input {
+    font-size: 20px;
+    width: 40%;
+    margin-bottom: 1%;
 }
-body {
+button {
+    
+    display: inline-block;
+    font-size: 20px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    color: blue;
+    font-family: 'VT323', monospace;
+}
+
+button:hover {
+  background-color: rgb(35, 35, 255);
+  color: white;
+}
+
+#buttons{
+    text-align: center;
+    font-family: 'VT323', monospace;
+}
+h2 {
+    color: #0d2c40;
+	letter-spacing: 1px; 
+	font-weight:600;
+    font-size:30px;
+    font-family: 'Roboto Mono', monospace;
+}
+form {
     text-align: center;
 }
+#helpBtns {
+    color: #FFFFFF;
+    text-align: center;
+}
+/* #background {
+    background-image: url("https://wallpapercave.com/wp/wp2647940.jpg");
+    background-size: 100%;
+    position: fixed;
+} */
+/* #luigi{
+    background: url("https://media1.tenor.com/images/97365e043b9d624a9c152ca4f3801b65/tenor.gif?itemid=11870223) no-repeat center"); 
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    position: absolute;
+}     */
+body {
+    background: url("https://wallpapercave.com/wp/wp2647940.jpg") no-repeat center fixed; 
+    background-size: cover;
+  }
+#mario {
+    margin-right: 30%;
+    width: 130px;
+    height: 160px;
+    position: relative;
+    display: block;
+}
+
+
+
+
+
+
